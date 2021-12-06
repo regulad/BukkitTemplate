@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>xyz.regulad</groupId>
-    <artifactId>BukkitTemplate</artifactId>
+    <artifactId>bukkittemplate</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>BukkitTemplate</name>
@@ -44,7 +44,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>16</release>
+                    <release>16</release> <!-- TODO: Change this to what you may need. -->
                 </configuration>
             </plugin>
             <plugin>
@@ -73,7 +73,7 @@
                     </execution>
                 </executions>
             </plugin>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
                 <version>3.3.0-SNAPSHOT</version>
@@ -82,7 +82,7 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>${project.groupId}.${project.artifactId}.org.bstats</shadedPattern>
+                            <shadedPattern>${project.groupId}.${project.name}.dep.org.bstats</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -94,32 +94,20 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>-->
+            </plugin>
         </plugins>
     </build>
     <distributionManagement>
         <repository>
-            <id>regulad-releases</id>
-            <url>https://nexus.regulad.xyz/repository/maven-releases/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/regulad/${project.name}</url>
         </repository>
-        <snapshotRepository>
-            <id>regulad-snapshots</id>
-            <url>https://nexus.regulad.xyz/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
     <repositories>
         <repository>
             <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <!--For other projects like Matchmaker and GameCore-->
-        <repository>
-            <id>regulad-releases</id>
-            <url>https://nexus.regulad.xyz/repository/maven-releases/</url>
-        </repository>
-        <repository>
-            <id>regulad-snapshots</id>
-            <url>https://nexus.regulad.xyz/repository/maven-snapshots/</url>
         </repository>
     </repositories>
     <dependencies>
