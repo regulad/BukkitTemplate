@@ -82,7 +82,7 @@
                     <relocations>
                         <relocation>
                             <pattern>org.bstats</pattern>
-                            <shadedPattern>${project.groupId}.${project.name}.dep.org.bstats</shadedPattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.dep.org.bstats</shadedPattern>
                         </relocation>
                     </relocations>
                 </configuration>
@@ -91,6 +91,20 @@
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!--Tools-->
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>1.18.20.0</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
                         </goals>
                     </execution>
                 </executions>
@@ -111,16 +125,31 @@
         </repository>
     </repositories>
     <dependencies>
+        <!--Minecraft-->
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.17.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
+        <!--Analytics-->
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-bukkit</artifactId>
+            <version>2.2.1</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--Tools-->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
-            <version>22.0.0</version>
+            <version>23.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.22</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
