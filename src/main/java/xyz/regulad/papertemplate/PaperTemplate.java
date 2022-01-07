@@ -1,11 +1,8 @@
-package xyz.regulad.BukkitTemplate;
+package xyz.regulad.papertemplate;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-/**
- * A template plugin to be used in Minecraft plugins.
- */
-public class BukkitTemplate extends JavaPlugin {
+public class PaperTemplate extends JavaPlugin {
     @Override
     public void onEnable() {
         this.getLogger().info("Loaded template plugin!");

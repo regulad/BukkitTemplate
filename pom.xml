@@ -4,10 +4,10 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>xyz.regulad</groupId>
-    <artifactId>bukkittemplate</artifactId>
+    <artifactId>papertemplate</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>BukkitTemplate</name>
+    <name>PaperTemplate</name>
     <developers>
         <developer>
             <id>regulad</id>
@@ -31,7 +31,7 @@
         </pluginRepository>
     </pluginRepositories>
     <build>
-        <defaultGoal>clean package</defaultGoal>
+        <defaultGoal>clean install</defaultGoal>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
